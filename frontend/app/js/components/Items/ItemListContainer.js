@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import log from 'logger';
 import { queryItems, toggleItem } from '../../actions/items';
 import AddItemComponent from './AddItemComponent';
 import ItemListComponent from './ItemListComponent';
@@ -9,7 +8,6 @@ import './Items.scss';
 class ItemListContainer extends Component {
 
   componentDidMount() {
-    log.info('Fetching Items');
     this.props.queryItems();
   }
 

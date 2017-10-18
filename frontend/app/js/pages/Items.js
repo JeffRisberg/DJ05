@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Medium, LessThanMedium } from '../toolkit';
 import ItemListContainer from '../components/Items/ItemListContainer';
 import ItemFormContainer from '../components/Items/ItemFormContainer';
 
@@ -12,16 +11,9 @@ class Items extends Component {
 
     return (
       <div>
-        <Medium>
           <div style={{ borderBottom: '5px solid red' }}>
             {content}
           </div>
-        </Medium>
-        <LessThanMedium>
-          <div style={{ borderBottom: '5px solid blue' }}>
-            {content}
-          </div>
-        </LessThanMedium>
       </div>
     )
   }

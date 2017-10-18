@@ -5,7 +5,7 @@ class Home extends Component {
   render() {
     return (
       <div className={this.props.className}>
-        <h2>RE03 Example</h2>
+        <h2>DJ05 Example</h2>
 
         <div className="row">
           <div className="col-md-4">
@@ -15,7 +15,7 @@ class Home extends Component {
             Uses Redux for data management
           </div>
           <div className="col-md-4">
-            Uses Node backend, with NEDB as proxy database
+            Uses Django backend
           </div>
         </div>
       </div>

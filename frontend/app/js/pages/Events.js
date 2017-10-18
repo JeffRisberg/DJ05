@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Medium, LessThanMedium } from '../toolkit';
 import EventListContainer from '../components/Events/EventListContainer';
 import EventFormContainer from '../components/Events/EventFormContainer';
 
@@ -12,16 +11,9 @@ class Events extends Component {
 
     return (
       <div>
-        <Medium>
           <div style={{ borderBottom: '5px solid orange' }}>
             {content}
           </div>
-        </Medium>
-        <LessThanMedium>
-          <div style={{ borderBottom: '5px solid yellow' }}>
-            {content}
-          </div>
-        </LessThanMedium>
       </div>
     );
   }
