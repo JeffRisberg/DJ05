@@ -16,7 +16,7 @@ class IndexView(TemplateView):
 
 
 class EventAPIView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = EventSerializer
 
     def get_object(self):
@@ -24,13 +24,13 @@ class EventAPIView(RetrieveAPIView):
 
 
 class EventsAPIView(ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Event.objects.all()
     serializer_class = EventSerializer
 
 
 class ItemAPIView(RetrieveAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     serializer_class = ItemSerializer
 
     def get_object(self):
@@ -38,6 +38,6 @@ class ItemAPIView(RetrieveAPIView):
 
 
 class ItemsAPIView(ListAPIView):
-    permission_classes = (IsAuthenticated,)
+    # permission_classes = (IsAuthenticated,)
     queryset = Item.objects.all()
     serializer_class = ItemSerializer

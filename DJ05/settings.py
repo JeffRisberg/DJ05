@@ -1,4 +1,3 @@
-
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
@@ -15,7 +14,6 @@ SECRET_KEY = 'bmg)ai9tn$xs1*ed!tr25*zak^$1ff30%=!g+xu08+b3&ft-sw'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -61,7 +59,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'DJ05.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -71,7 +68,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -85,7 +81,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/

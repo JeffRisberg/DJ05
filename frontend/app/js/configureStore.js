@@ -13,8 +13,6 @@ const configureStore = ({ initialState = {}, history }) => {
     form: formReducer,
   });
 
-  const logger = createLogger();
-
   const middlewares = [
     routerMiddleware(history),
     thunk,

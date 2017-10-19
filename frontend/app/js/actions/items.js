@@ -6,16 +6,17 @@ import { ActionTypes as types, forms } from '../constants';
 export const queryItems = () => {
   return function (dispatch) {
 
+    console.log("queryItems");
     dispatch({
       type: types.FETCH_ITEMS,
     });
-    return fetch('/api/items', {})
+    return fetch('http://localhost:8000/api/items', {})
       .then(response => response.json())
       .then((json) => {
         dispatch(
           {
             type: types.FETCH_ITEMS_SUCCESS,
-            items: json.data
+            items: json
           }
         );
       });
@@ -28,13 +29,13 @@ export const fetchItem = (id) => {
     dispatch({
       type: types.FETCH_ITEMS,
     });
-    return fetch('/api/items/' + id, {})
+    return fetch('http://localhost:8000/api/items/' + id, {})
       .then(response => response.json())
       .then((json) => {
         dispatch(initialize(forms.Item, json.data[0]));
         dispatch({
           type: types.FETCH_ITEMS_SUCCESS,
-          items: json.data
+          items: json
         })
       });
   };
