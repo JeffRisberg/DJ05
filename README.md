@@ -1,4 +1,4 @@
-# React Front End Example
+# Django - React example
 
 Technologies used:
 

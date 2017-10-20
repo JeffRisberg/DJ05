@@ -1,7 +1,15 @@
 from django.db import models
 
 
-class Event(models.Model):
+class BaseModel(models.Model):
+    date_created = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Event(BaseModel):
     text = models.TextField()
     time = models.IntegerField()
     completed = models.BooleanField(default=False)
@@ -13,7 +21,7 @@ class Event(models.Model):
         return self.text
 
 
-class Item(models.Model):
+class Item(BaseModel):
     name = models.TextField()
     value = models.IntegerField()
     description = models.TextField()

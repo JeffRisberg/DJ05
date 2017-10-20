@@ -4,7 +4,7 @@
     "transform-object-rest-spread",
     "transform-class-properties",
     ["module-resolver", {
-      "root": ["./app/js"],
+      "root": ["./assets/js"],
       "alias": {
         "Events": "components/Events",
         "Items": "components/Items",
