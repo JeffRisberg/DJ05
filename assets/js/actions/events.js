@@ -31,7 +31,7 @@ export const fetchEvent = (id) => {
     return fetch('http://localhost:8000/api/events/' + id, {})
       .then(response => response.json())
       .then((json) => {
-        dispatch(initialize(forms.Event, json.data[0]));
+        dispatch(initialize(forms.Event, json));
         dispatch(
           {
             type: types.FETCH_EVENTS_SUCCESS,

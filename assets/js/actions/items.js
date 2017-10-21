@@ -32,7 +32,7 @@ export const fetchItem = (id) => {
     return fetch('http://localhost:8000/api/items/' + id, {})
       .then(response => response.json())
       .then((json) => {
-        dispatch(initialize(forms.Item, json.data[0]));
+        dispatch(initialize(forms.Item, json));
         dispatch({
           type: types.FETCH_ITEMS_SUCCESS,
           items: json

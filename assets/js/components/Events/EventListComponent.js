@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Loading } from 'components';
+import 'components/Loading/Loading.scss';
 import './Events.scss';
 
 class EventListComponent extends Component {
@@ -15,7 +17,7 @@ class EventListComponent extends Component {
     if (status.isFetching) {
       return (
         <div className="events__list">
-          Loading
+          <Loading size="large" color="purple"/>
         </div>
       );
     }

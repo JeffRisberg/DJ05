@@ -11,9 +11,9 @@ const validate = (values) => {
   if (!values.text) {
     errors.text = 'Please enter some text.';
   }
-  if (!values.time || values.time.trim().length != 4 || parseInt(values.time) > 2359) {
-    errors.time = 'Please enter a time (0000 to 2359).';
-  }
+  //if (!values.time || values.time.trim().length != 4 || parseInt(values.time) > 2359) {
+  //  errors.time = 'Please enter a time (0000 to 2359).';
+  //}
 
   return errors;
 };
