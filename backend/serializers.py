@@ -11,7 +11,7 @@ class TimestampField(serializers.Field):
     def to_representation(self, value):
         return int(time.mktime(value.timetuple()))
     def to_internal_value(self, value):
-        return datetime.datetime.fromtimestamp(value / 1e3)
+        return datetime.datetime.fromtimestamp(value)
 
 
 class EventSerializer(serializers.ModelSerializer):
