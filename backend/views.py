@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 from django.shortcuts import get_object_or_404
 
 from rest_framework.generics import (
-    ListAPIView, RetrieveAPIView
+    ListAPIView, RetrieveUpdateAPIView
 )
 from rest_framework.permissions import IsAuthenticated
 
@@ -15,7 +15,7 @@ class IndexView(TemplateView):
     template_name = 'backend/index.html'
 
 
-class EventAPIView(RetrieveAPIView):
+class EventAPIView(RetrieveUpdateAPIView):
     # permission_classes = (IsAuthenticated,)
     serializer_class = EventSerializer
 
@@ -29,7 +29,7 @@ class EventsAPIView(ListAPIView):
     serializer_class = EventSerializer
 
 
-class ItemAPIView(RetrieveAPIView):
+class ItemAPIView(RetrieveUpdateAPIView):
     # permission_classes = (IsAuthenticated,)
     serializer_class = ItemSerializer
 

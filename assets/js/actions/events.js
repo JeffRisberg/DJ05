@@ -57,13 +57,13 @@ export const saveEvent = (event) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ event: event })
+      body: JSON.stringify({...event, 'partial': true})
     })
       .then(response => response.json())
       .then((json) => {
         dispatch({
           type: types.PERSIST_EVENT_SUCCESS,
-          events: json.data,
+          events: [json],
           meta: {
             log: ['event changed']
           }
@@ -82,7 +82,7 @@ export const addEvent = (event) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ event: event })
+      body: JSON.stringify(event)
     })
       .then(response => response.json())
       .then((json) => {

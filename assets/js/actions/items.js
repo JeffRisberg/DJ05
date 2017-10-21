@@ -57,13 +57,13 @@ export const saveItem = (item) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ item: item })
+      body: JSON.stringify({...item, 'partial': true})
     })
       .then(response => response.json())
       .then((json) => {
         dispatch({
           type: types.PERSIST_ITEM_SUCCESS,
-          items: json.data,
+          items: [json],
           meta: {
             log: ['item changed', item]
           }

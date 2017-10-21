@@ -11,7 +11,7 @@ class BaseModel(models.Model):
 
 class Event(BaseModel):
     text = models.TextField()
-    time = models.IntegerField()
+    time = models.TextField()
     completed = models.BooleanField(default=False)
 
     class Meta:
