@@ -6,7 +6,6 @@ import { ActionTypes as types, forms } from '../constants';
 export const queryEvents = () => {
   return function (dispatch) {
 
-    console.log("queryEvents");
     dispatch({
       type: types.FETCH_EVENTS,
     });
@@ -16,7 +15,7 @@ export const queryEvents = () => {
         dispatch(
           {
             type: types.FETCH_EVENTS_SUCCESS,
-            events: json
+            events: json.data
           });
       });
   };
@@ -31,11 +30,11 @@ export const fetchEvent = (id) => {
     return fetch('http://localhost:8000/api/events/' + id, {})
       .then(response => response.json())
       .then((json) => {
-        dispatch(initialize(forms.Event, json));
+        dispatch(initialize(forms.Event, json.data));
         dispatch(
           {
             type: types.FETCH_EVENTS_SUCCESS,
-            events: json
+            events: [json.data]
           });
       });
   };
@@ -57,13 +56,13 @@ export const saveEvent = (event) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({...event, 'partial': true})
+      body: JSON.stringify({ ...event, 'partial': true })
     })
       .then(response => response.json())
       .then((json) => {
         dispatch({
           type: types.PERSIST_EVENT_SUCCESS,
-          events: [json],
+          events: [json.data],
           meta: {
             log: ['event changed']
           }

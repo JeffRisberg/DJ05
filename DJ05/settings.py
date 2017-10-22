@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,6 +59,19 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'DJ05.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+    ),
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+    ),
+    'DEFAULT_PAGINATION_CLASS': 'DJ05.pagination.StandardPagination',
+    'COERCE_DECIMAL_TO_STRING': False,
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'SEARCH_PARAM': 'q',
+}
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
