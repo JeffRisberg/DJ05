@@ -43,8 +43,18 @@ export const fetchItem = (id) => {
 export const toggleItem = (item) => {
   return function (dispatch) {
     let newItem = { ...item, completed: !item.completed };
-    saveItem(newItem)(dispatch);
-  }
+    return fetch('http://localhost:8000/api/items/' + item.id, {
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ...newItem, 'partial': true })
+    })
+      .then(() => {
+        dispatch(queryItems());
+      });
+  };
 };
 
 export const saveItem = (item) => {
